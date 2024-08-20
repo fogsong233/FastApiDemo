@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gcc \
     && rm -rf /var/lib/apt/lists/*
 
+RUN pip config set global.index-url https://mirror.nju.edu.cn/pypi/web/simple
 # Install Poetry
 RUN pip install poetry
 
