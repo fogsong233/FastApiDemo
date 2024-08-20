@@ -21,6 +21,7 @@ RUN pip install poetry
 COPY poetry.lock pyproject.toml /app/
 
 # Project initialization:
+RUN poetry source add --priority=default mirrors https://pypi.tuna.tsinghua.edu.cn/simple/
 RUN poetry config virtualenvs.create false \
     && poetry install --no-interaction --no-ansi
 
